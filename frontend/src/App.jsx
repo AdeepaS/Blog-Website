@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     async function grabData(){
-      const responce = await axios.get("http://localhost:3000/posts")
+      const responce = await axios.delelte("http://localhost:3000/posts/681c2fb7b35cfbbdf550e25d")
       if(responce.status === 200){
         setData(responce.data)
       }
