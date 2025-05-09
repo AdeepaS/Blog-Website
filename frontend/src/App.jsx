@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react'
+import { getPost, getPosts, createPost, updatePost, deletePost } from './api'
 import axios from "axios"
 import './App.css'
 
 function App() {
   
-  const [data,setData] = useState()
+  const [posts,setPosts] = useState()
 
   useEffect(() => {
-    async function grabData(){
-      const responce = await axios.delelte("http://localhost:3000/posts/681c2fb7b35cfbbdf550e25d")
-      if(responce.status === 200){
-        setData(responce.data)
+    async function loadAllPosts() {
+      let data = await getPosts()
+      if(data){
+        setPosts(data)
       }
     }
 
-    grabData()
+    loadAllPosts()
   },[])
   return (
     <>
-    {JSON.stringify(data)}
+      {JSON.stringify(posts)}
     </>
   )
 }
