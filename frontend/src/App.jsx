@@ -7,6 +7,8 @@ import Profile from '../pages/Profile';
 import ReadBlog from '../pages/ReadBlog';
 import CreateBlog from '../pages/CreateBlog';
 import Contact from '../pages/Contact';
+import Navbar from '../components/Navbar';
+import Layout from '../components/Layout';
 
 function App() {
   
@@ -23,12 +25,14 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Landing/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/createblog' element={<CreateBlog/>}/>
-        <Route path='/readblog' element={<ReadBlog/>}/>
-        <Route path='/profile' element={<Profile/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
+        <Route element={<Layout/>}>
+          <Route path='/home' element={<Home/>}/>
+          <Route path='/createblog' element={<CreateBlog/>}/>
+          <Route path='/readblog' element={<ReadBlog/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/contact' element={<Contact/>}/>
+        </Route>
       </Routes>
     </Router>
   )
