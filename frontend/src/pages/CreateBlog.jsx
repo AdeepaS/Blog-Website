@@ -9,3 +9,5 @@ const CreateBlog = () => {
 }
 
 export default CreateBlog;
+
+//createBlog page
