@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const BlogCard = ({post}) => {
 
@@ -6,11 +7,11 @@ const BlogCard = ({post}) => {
   let stringDate = date.toString();   
 
   return (
-    <div className="post">
+    <Link to={`/readblog/${post._id}`} className="post">
         <h1>{post.title}</h1>
         <h2>{post.description}</h2>
         <h3>{stringDate.slice(4,15)}</h3>
-    </div>
+    </Link>
   )
 }
 
